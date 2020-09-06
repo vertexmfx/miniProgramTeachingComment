@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+      
 
     },
 
@@ -12,7 +13,34 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        wx.getStorage({
+          key: 'StudentId',
+          success:res=>{
+              this.setData({
+                  studentId:res.data
+              })
+              console.log(this.data.studentId)
+              let studentInfo={
+                  "request":"getCourseList",
+                  "StudentId":this.data.studentId
+              }
+              wx.request({
+                url: 'http://vertex.tpddns.cn:81/html/miniProgpingjiao/php/studentFunc.php',
+                data:studentInfo,
+                timeout:1000,
+                method:"POST",
+                success:res=>{
+                    let courseArr=new Array()
+                    for (let courseidx in res.data){
+                        courseArr.push(res.data[courseidx].CourseName)
+                    }
+                    this.setData({
+                        courseArr:courseArr
+                    })
+                }
+              })
+          }
+        })
     },
 
     /**

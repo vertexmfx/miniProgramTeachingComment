@@ -1,2 +1,13 @@
 <!--miniprogram/pages/navigate/course.wxml-->
-<text>miniprogram/pages/navigate/course.wxml</text>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">我的课程</view>
+    </view>
+    <view class="page__bd">
+        <mp-cells>
+            <mp-cell wx:for="{{courseArr}}" prop="course" id="{{item}}" title="{{item}}" link bindtap="">
+            </mp-cell>
+        </mp-cells>
+    </view>
+</view>
+
