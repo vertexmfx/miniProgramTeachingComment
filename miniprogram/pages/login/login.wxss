@@ -1,0 +1,28 @@
+/* pages/login/login.wxss */
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0 30px;
+}
+.login-form{
+  
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+.input-box{
+  height: 40px;
+  margin: 0px 0px 10px 0px;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: darkgray;
+  padding-left: 10px;
+  border-style: solid;
+}
+.log-btn{
+  margin-bottom: 10px;
+}

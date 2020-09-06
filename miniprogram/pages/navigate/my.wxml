@@ -1,0 +1,17 @@
+<!--miniprogram/pages/navigate/my.wxml-->
+<view class="page">
+    <view class='avatarbox'>
+        <image class="avatar" src="{{imgSrc}}"/>
+        <view>{{studentInfo.StudentName}}</view>
+    </view>
+    <mp-cells title="个人信息">
+        <mp-cell wx:for="{{infoArr}}" value="{{item}}" footer="{{studentInfo[item]}}">
+                <!-- <image slot="title" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image> -->
+            </mp-cell>
+    </mp-cells>
+
+    <mp-cells>
+        <mp-cell value="修改信息" link></mp-cell>
+        <mp-cell value="退出登录" style="color:red;text-align:center"></mp-cell>
+    </mp-cells>
+</view>

@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/login/reg",
+        "pages/login/login",
+        "pages/student/index",
+        "pages/navigate/course",
+        "pages/navigate/my"
+    ],
+    
+    "useExtendedLib": {
+      "weui": true
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "智能评教小程序",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+          {
+            "pagePath": "pages/index/index",
+            "text": "评教",
+            "iconPath": "./img/kecheng.png",
+            "selectedIconPath": "./img/kechengblue.png"
+          },
+          {
+            "pagePath": "pages/navigate/course",
+            "text": "课程",
+            "iconPath": "./img/course.png",
+            "selectedIconPath": "./img/courseblue.png"
+          },
+          {
+            "pagePath": "pages/navigate/my",
+            "text": "我的",
+            "iconPath": "./img/wode3.png",
+            "selectedIconPath": "./img/wode3blue.png"
+          }
+        ]
+      },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

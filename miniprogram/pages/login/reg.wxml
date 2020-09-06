@@ -1,0 +1,68 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">注册评教系统</view>
+        <view class="page__desc">输入信息</view>
+    </view>
+
+    <view class="page__bd">
+        <mp-form id="regForm">
+        <mp-cells title="请完善个人信息">
+            <mp-cell prop="name" title="姓名" ext-class="">
+                <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入真实姓名"/>
+            </mp-cell>
+            <mp-cell prop="id" title="学号" ext-class="">
+                <input bindinput="formInputChange" data-field="id" class="weui-input" placeholder="请输入学号"/>
+            </mp-cell>
+            <mp-cell prop="mobile" title="手机号" ext-class=" weui-cell_vcode">
+                <input bindinput="formInputChange" data-field="mobile" class="weui-input" placeholder="请输入手机号"/>
+                <view slot="footer" class="weui-vcode-btn">获取验证码</view>
+            </mp-cell>
+            <mp-cell prop="passwd" title="密码">
+                <input bindinput="formInputChange" data-field='passwd' class="weui-input pwd" type="password" placeholder="请输入密码"/>
+            </mp-cell>
+            <mp-cell prop="passwd2" title="确认密码">
+                <input bindinput="formInputChange" data-field='passwd2' class="weui-input pwd" type="password" placeholder="请确认密码"/>
+            </mp-cell>
+            
+        </mp-cells>
+        
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">学校</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCountryChange" value="{{schoolIndex}}" range="{{schools}}">
+                        <view class="weui-select weui-select_in-select-after">{{schools[schoolIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">年级</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindGradeChange" value="{{gradeIndex}}" range="{{grades}}">
+                        <view class="weui-select weui-select_in-select-after">{{grades[gradeIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">专业</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindMajorChange" value="{{majorIndex}}" range="{{majors}}">
+                        <view class="weui-select weui-select_in-select-after">{{majors[majorIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        </mp-form>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class="logo">
+<image src="/img/logo.png" style="width:100px;height:100px"></image>
+<text>欢迎使用评教小程序</text>
+</view>
+<view class="login-form">
+<form class="col-12">
+  <input placeholder="学号/手机号" class="input-box" id="StudentId" bindinput="studentIdChange"></input>
+  <input password="True" placeholder="密码" class="input-box" id="Passwd" bindinput="passwdChange"></input>
+  <button class="btn-success log-btn" bindtap="tapLogin">登录</button>
+  <button bindtap="tapReg">注册</button>
+</form>
+</view>
+
