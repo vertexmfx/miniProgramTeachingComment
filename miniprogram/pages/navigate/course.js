@@ -5,8 +5,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-      
+      imageSrc:"http://vertex.tpddns.cn:81/html/miniProgpingjiao/img/course.png"
 
+    },
+
+    courseDetail:function(event){
+        console.log(event.currentTarget.dataset.id)
     },
 
     /**
@@ -30,13 +34,20 @@ Page({
                 timeout:1000,
                 method:"POST",
                 success:res=>{
-                    let courseArr=new Array()
-                    for (let courseidx in res.data){
-                        courseArr.push(res.data[courseidx].CourseName)
-                    }
                     this.setData({
-                        courseArr:courseArr
+                        courseArr:res.data
                     })
+                    for (let courseidx in this.data.courseArr){
+                        if(this.data.courseArr[courseidx].TName2==null){
+                            this.setData({
+                                ['courseArr['+courseidx+'].TName2']:""
+                            })}
+                        if(this.data.courseArr[courseidx].TName3==null){
+                                this.setData({
+                                    ['courseArr['+courseidx+'].TName3']:""
+                                })}
+                    }
+                    console.log(this.data.courseArr)
                 }
               })
           }
