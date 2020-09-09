@@ -19,7 +19,7 @@
             
         </view>
         <view class="weui-cells">
-                <a class="weui-cell weui-cell_active weui-cell_access weui-cell_example">
+                <a class="weui-cell weui-cell_active weui-cell_access weui-cell_example" bindtap="openDialog">
                     <view class="weui-cell__hd">
                         <image src="http://vertex.tpddns.cn:81/html/miniProgpingjiao/img/icons/plus-circle-fill.svg" style="width:2rem;height:2rem;margin-right:1rem;color:rgb(25,33,200);fill:rgb(25,33,200)"></image></view>
                     <view class="weui-cell__bd weui-cell_primary">
@@ -27,6 +27,16 @@
                     </view>
                     <text class="weui-cell__ft"></text>
                 </a>
+            </view>
+        </view>
+    </view>
+    <view class="fadeIn" wx:if="{{Dialog}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__bd"><h2>加入课程</h2><input id="addCourseId" placeholder="请输入6位课程号" bindinput="inputChange"></input></view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="addCourse">确定</a>
             </view>
         </view>
     </view>

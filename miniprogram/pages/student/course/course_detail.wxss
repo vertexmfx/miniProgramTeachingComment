@@ -1,0 +1,41 @@
+/* miniprogram/pages/student/course/course_detail.wxss */
+.box{
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    justify-content: flex-start;
+    background-color: white;
+}
+.box-image{
+    width: 6rem;
+    height: 6rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: darkgray 0 0 1rem;
+}
+.box1{
+    width: 8rem;
+}
+.text-title{
+    font-size: larger;
+    font-weight: bold;
+   
+}
+.box2{
+    padding: 0 2rem 0 1.5rem;
+    flex-direction: column;
+}
+.block{
+    border: darkmagenta;
+    border-width: 3px;
+    border-radius: 1rem;
+    /* border-style: solid; */
+    display:flex
+}
+.quit{
+    color: red;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    
+}

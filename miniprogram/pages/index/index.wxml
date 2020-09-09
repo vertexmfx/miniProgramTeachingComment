@@ -1,2 +1,2 @@
 <!--index.wxml-->
-
+<button bindtap="navigateToTeacher">教员板块</button>

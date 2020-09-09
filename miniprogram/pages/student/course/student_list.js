@@ -1,17 +1,10 @@
-// miniprogram/pages/navigate/my.js
+// miniprogram/pages/student/course/student_list.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        
-        imgSrc:"http://vertex.tpddns.cn:81/html/miniProgpingjiao/img/touxiang.png",
-
-        
-        
-        studentInfo:{
-        }
 
     },
 
@@ -19,32 +12,23 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            infoArr:['StudentName',"StudentId","School","Major","Grade","Gender"]
-        })
-
-        for (let item in this.data.infoArr){
-                let tmpStr="studentInfo."+this.data.infoArr[item]
-                
-            // console.log(this.data.infoArr[item])
-            wx.getStorage({
-                key: this.data.infoArr[item],
-                success:res=>{
-                    this.setData({
-                        [tmpStr]:res.data
-                    })
-                    
-                }
+        this.setData({CourseId:options.CourseId})
+        wx.request({
+          url: 'http://vertex.tpddns.cn:81/html/miniProgpingjiao/php/courseFunc.php',
+          method:"POST",
+          timeout:1000,
+          data:{
+              request:"getStudentList",
+              CourseId:this.data.CourseId
+          },
+          success:res=>{
+              this.setData({
+                  StudentList:res.data
               })
-        }
-        setTimeout(() => {
-            console.log(this.data.studentInfo)
-        }, 500);
-        
-        
-
-        
-        // console.log(stuname)
+              
+              
+          }
+        })
     },
 
     /**

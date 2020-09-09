@@ -1,0 +1,13 @@
+/* pages/student/course/teacher-detail.wxss */
+.weui-media-box__text{
+    
+    font-size: medium;
+    color: grey;
+}
+.cell-footer{
+    color: dodgerblue;
+    font-size: small;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}

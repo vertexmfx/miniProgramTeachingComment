@@ -1,1 +1,8 @@
 /* miniprogram/pages/navigate/course.wxss */
+input{
+ border: 1px;
+ border-style: solid;   
+ height: 3rem;
+ border-color: darkgrey;
+ border-radius: 1rem;
+}

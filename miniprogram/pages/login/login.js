@@ -37,8 +37,12 @@ Page({
           method:"POST",
           timeout:1000,
           success:function(res){
-            console.log(res)
+            if(res.data.Gender==0){
+              res.data.Gender='男'
+            }else{res.data.Gender='女'}
             if(res.data!=null){
+              getApp().globalData.StudentId=res.data.StudentId
+
               wx.setStorage({
                 data:res.data.StudentName,
                 key: 'StudentName',

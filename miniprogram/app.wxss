@@ -167,6 +167,10 @@ page {
   justify-content: center;
   align-items: center;
 }
+.avatar-small{
+  height: 4rem;
+  width: 4rem;
+}
 
 .avatarbox{
   display:flex;
@@ -181,3 +185,5 @@ page {
   margin: 15rpx;
   font-weight:bold;
 }
+
+.weui-tabbar{position:fixed;bottom:0;left:0;right:0}

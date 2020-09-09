@@ -1,0 +1,16 @@
+<!--miniprogram/pages/student/course/student_list.wxml-->
+
+<view class="page">
+    <view class="page__hd" style="margin-left:1rem;display:flex;flex-direction:column">
+        <view class="page__title" style="font-weight:bold;font-size:large">课程成员</view>
+        <view class="page__desc">{{StudentList.length}}人</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title" >
+            <view wx:for="{{StudentList}}" class="weui-cell">
+                <view class="weui-cell__bd">{{item.StudentName}}</view>
+                <view class="weui-cell__ft">{{item.StudentId}}</view>
+            </view>
+        </view>
+    </view>
+</view>

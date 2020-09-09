@@ -1,0 +1,63 @@
+<!--miniprogram/pages/student/course/course_detail.wxml-->
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex box">
+            <view class=" box1 block">
+                <image class="box-image" src="../../../img/xiandai.png"></image>
+            </view>
+            <view class="box2 block">
+                <text class="text-title">{{CourseInfo.CourseName}}</text>
+                <text>课程号:{{CourseId}}</text>
+                <text space="&nbsp;">{{CourseInfo.TName1+" "+CourseInfo.TName2+" "+CourseInfo.TName3}}</text>
+            </view>
+        </view>
+        
+        
+        <view class="weui-cells">
+            <a class="weui-cell weui-cell_active  weui-cell_access" bindtap="teacherList">
+                <view class="weui-cell__hd">
+                    <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt style="width: 20px; height: 20px; margin-right: 16px; display: block;"></image>
+                </view>
+                <view class="weui-cell__bd weui-cell_primary">
+                    <view>教员信息</view>
+                </view>
+                <text class="weui-cell__ft">{{CourseInfo.TeacherCount}}人</text>
+            </a>
+            <a class="weui-cell weui-cell_active  weui-cell_access" bindtap="studentList">
+                <view class="weui-cell__hd" >
+                    <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt style="width: 20px; height: 20px; margin-right: 16px; display: block;"></image>
+                </view>
+                <view class="weui-cell__bd weui-cell_primary">
+                    <view>课堂成员</view>
+                </view>
+                <text class="weui-cell__ft">{{CourseInfo.StudentCount}}人</text>
+            </a>
+            <a class="weui-cell weui-cell_active  weui-cell_access">
+                <view class="weui-cell__hd">
+                    <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt style="width: 20px; height: 20px; margin-right: 16px; display: block;"></image>
+                </view>
+                <view class="weui-cell__bd weui-cell_primary">
+                    <view>教学反馈</view>
+                </view>
+                <text class="weui-cell__ft"></text>
+            </a>
+        </view>
+        
+        <view bindtap="showDialog" style="background:white;padding:0.5rem 0 0.5rem 0;margin-top:1rem">
+            <view class="quit">
+                <text style="font-size:large">退出课堂</text>
+            </view>
+        </view>
+        <view class="fadeIn" wx:if="{{Dialog}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></view>
+            <view class="weui-dialog__bd">确定退出课程？</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="cancelQuit">取消</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="confirmQuit">确定</a>
+            </view>
+        </view>
+    </view>
+    </view>
+</view>

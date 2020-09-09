@@ -16,10 +16,17 @@ Page({
     })
   },
   onLoad: function () {
-    
+    // wx.clearStorage({
+    //   success: (res) => {
+    //     wx.navigateTo({
+    //       url: '../login/login',
+    //     })
+    //   },
+    // })
     let studentId=wx.getStorage({
       key: 'StudentId',
-      success:function(){
+      success:res=>{
+        getApp().globalData.StudentId=res.data
         wx.switchTab({
           url: '../navigate/my',
         })
@@ -30,6 +37,11 @@ Page({
         })
       }
     })},
+    navigateToTeacher:function(){
+      wx.navigateTo({
+        url: '../teacher/teacher-navigate/comment',
+      })
+    }
     // console.log(studentId)
 
 

@@ -1,15 +1,22 @@
 {
     "pages": [
+        "pages/navigate/course",
         "pages/index/index",
         "pages/login/reg",
         "pages/login/login",
         "pages/student/index",
-        "pages/navigate/course",
-        "pages/navigate/my"
+        "pages/navigate/my",
+        "pages/teacher/teacher-login/login",
+        "pages/teacher/teacher-login/reg",
+        "pages/teacher/teacher-navigate/comment",
+        "pages/teacher/teacher-navigate/course",
+        "pages/teacher/teacher-navigate/info",
+        "pages/student/course/course_detail",
+        "pages/student/course/student_list",
+        "pages/student/course/teacher_detail"
     ],
-    
     "useExtendedLib": {
-      "weui": true
+        "weui": true
     },
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -20,26 +27,27 @@
     },
     "tabBar": {
         "list": [
-          {
-            "pagePath": "pages/index/index",
-            "text": "评教",
-            "iconPath": "./img/kecheng.png",
-            "selectedIconPath": "./img/kechengblue.png"
-          },
-          {
-            "pagePath": "pages/navigate/course",
-            "text": "课程",
-            "iconPath": "./img/course.png",
-            "selectedIconPath": "./img/courseblue.png"
-          },
-          {
-            "pagePath": "pages/navigate/my",
-            "text": "我的",
-            "iconPath": "./img/wode3.png",
-            "selectedIconPath": "./img/wode3blue.png"
-          }
+            {
+                "pagePath": "pages/index/index",
+                "text": "评教",
+                "iconPath": "./img/kecheng.png",
+                "selectedIconPath": "./img/kechengblue.png"
+            },
+            {
+                "pagePath": "pages/navigate/course",
+                "text": "课程",
+                "iconPath": "./img/course.png",
+                "selectedIconPath": "./img/courseblue.png"
+            },
+            {
+                "pagePath": "pages/navigate/my",
+                "text": "我的",
+                "iconPath": "./img/wode3.png",
+                "selectedIconPath": "./img/wode3blue.png"
+            }
         ]
-      },
+    },
+    "enablePullDownRefresh": true,
     "sitemapLocation": "sitemap.json",
     "style": "v2"
 }
